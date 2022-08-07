@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('applicants', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id', 100)->nullable();
-            $table->string('job_post_id', 100)->nullable();
-            $table->string('education-id', 100)->nullable();
-            $table->string('experience_id', 100)->nullable();
-            $table->string('certification_id', 100)->nullable();
-            $table->string('skill_id', 100)->nullable();
+            $table->string('user_id',100)->nullable();
+            $table->string('address_line', 100)->nullable();
+            $table->string('post_office', 100)->nullable();
+            $table->string('police_station', 100)->nullable();
+            $table->string('zip_Code', 100)->nullable();
+            $table->string('district', 100)->nullable();
+            $table->string('country', 100)->nullable();
             $table->string('creator',100)->nullable();
             $table->string('slug',100)->nullable();
             $table->integer('status')->default(1);
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('applicants');
+        Schema::dropIfExists('addresses');
     }
 };

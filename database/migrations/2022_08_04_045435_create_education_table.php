@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('applicants', function (Blueprint $table) {
+        Schema::create('education', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id', 100)->nullable();
-            $table->string('job_post_id', 100)->nullable();
-            $table->string('education-id', 100)->nullable();
-            $table->string('experience_id', 100)->nullable();
-            $table->string('certification_id', 100)->nullable();
-            $table->string('skill_id', 100)->nullable();
+            $table->string('user_id',100)->nullable();
+            $table->string('level',100)->nullable();
+            $table->string('country_of_institution',100)->nullable();
+            $table->string('institution_name',100)->nullable();
+            $table->string('major_subject',100)->nullable();
+            $table->string('result',100)->nullable();
+            $table->string('passing_year',100)->nullable();
+            $table->string('note',100)->nullable();
             $table->string('creator',100)->nullable();
             $table->string('slug',100)->nullable();
             $table->integer('status')->default(1);
@@ -35,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('applicants');
+        Schema::dropIfExists('education');
     }
 };

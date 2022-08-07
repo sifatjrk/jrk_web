@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class QuestionType extends Model
+class Address extends Model
 {
     use HasFactory;
-
+    
     protected $guarded = ['*'];
 
-    public function singleQuestion()
+    public function user()
     {
-        return $this->hasMany(SingleQuestion::class, 'question_type_id', 'id');
-    }
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    } 
 }

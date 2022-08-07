@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class SingleQuestion extends Model
 {
     use HasFactory;
+    
+    protected $guarded = ['*'];
+
+    public function question()
+    
+    {
+        $this->belongsTo(Question::class, )
+    }
 }

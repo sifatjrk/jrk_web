@@ -23,7 +23,8 @@ return new class extends Migration
             $table->text('responsibility')->nullable();
             $table->integer('salary', 100)->nullable();
             $table->text('benifits')->nullable();
-            $table->string('job_type',100)->nullable();
+            $table->string('job_type',100)->nullable()->comment('on-site, remote or hybrid');
+            $table->string('expiry_date')->nullable();
             $table->string('creator',100)->nullable();
             $table->string('slug',100)->nullable();
             $table->integer('status')->default(1);
